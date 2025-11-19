@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic 8 Ball - Student Projects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Projects</h1>
+            <nav>
+                <a href="form.html" class="nav-link">Submit Project</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="eight-ball-container">
+                <div class="eight-ball" id="eightBall">
+                    <div class="ball-shine"></div>
+                    <div class="window">
+                        <div class="triangle"></div>
+                        <div class="project-display" id="projectDisplay">
+                            <div class="project-info">
+                                <h2 class="project-title"></h2>
+                                <p class="project-author"></p>
+                                <div class="project-screenshot"></div>
+                                <a href="#" class="project-link" target="_blank"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="shake-button" id="shakeButton">
+                <span>Shake the Ball</span>
+            </button>
+
+            <div class="loading" id="loading">Loading projects...</div>
+            <div class="error" id="error" style="display: none;"></div>
+        </main>
+
+        <footer>
+            <p>Projects auto-rotate every 15 seconds</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

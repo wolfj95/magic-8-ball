@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Project - Magic 8 Ball</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Submit Your Project</h1>
+            <nav>
+                <a href="index.html" class="nav-link">View Projects</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <form id="projectForm" class="project-form">
+                    <div class="form-group">
+                        <label for="studentName">Your Name</label>
+                        <input
+                            type="text"
+                            id="studentName"
+                            name="studentName"
+                            required
+                            placeholder="Jane Doe"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectTitle">Project Title</label>
+                        <input
+                            type="text"
+                            id="projectTitle"
+                            name="projectTitle"
+                            required
+                            placeholder="My Amazing Project"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectLink">Project Link</label>
+                        <input
+                            type="url"
+                            id="projectLink"
+                            name="projectLink"
+                            required
+                            placeholder="https://myproject.com"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="screenshot">Screenshot</label>
+                        <input
+                            type="file"
+                            id="screenshot"
+                            name="screenshot"
+                            accept="image/*"
+                            required
+                        >
+                        <small>Upload a screenshot of your project (PNG, JPG, etc.)</small>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-button">
+                            <span id="submitText">Submit Project</span>
+                            <span id="submitLoading" style="display: none;">Submitting...</span>
+                        </button>
+                    </div>
+
+                    <div class="form-message" id="formMessage" style="display: none;"></div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="form.js"></script>
+</body>
+</html>
