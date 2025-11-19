@@ -30,7 +30,7 @@ A minimalist, sketch-styled web application that displays student projects in a 
        id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
        student_name TEXT NOT NULL,
        title TEXT NOT NULL,
-       link TEXT NOT NULL,
+       link TEXT,
        screenshot_url TEXT,
        created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc', NOW())
    );
@@ -141,7 +141,7 @@ The `student_projects` table has the following structure:
 | id | UUID | Primary key |
 | student_name | TEXT | Name of the student |
 | title | TEXT | Project title |
-| link | TEXT | URL to the project |
+| link | TEXT | URL to the project (optional) |
 | screenshot_url | TEXT | Public URL of the screenshot |
 | created_at | TIMESTAMP | Submission timestamp |
 

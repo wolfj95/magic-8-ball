@@ -6,7 +6,7 @@ CREATE TABLE student_projects (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     student_name TEXT NOT NULL,
     title TEXT NOT NULL,
-    link TEXT NOT NULL,
+    link TEXT,
     screenshot_url TEXT,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT TIMEZONE('utc', NOW())
 );
@@ -40,6 +40,9 @@ CREATE POLICY "Allow public reads"
 ON storage.objects FOR SELECT
 TO public
 USING (bucket_id = 'project-screenshots');
+
+-- If you already created the table with link as NOT NULL, run this to update it:
+-- ALTER TABLE student_projects ALTER COLUMN link DROP NOT NULL;
 
 -- Note: After running this SQL, you also need to:
 -- 1. Go to Storage in your "arcade" Supabase dashboard

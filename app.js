@@ -82,16 +82,21 @@ function displayProject(index) {
         }
 
         // Handle link
-        linkElement.href = project.link;
-        linkElement.textContent = 'View Project';
+        if (project.link) {
+            linkElement.href = project.link;
+            linkElement.textContent = 'View Project';
+            linkElement.style.display = 'inline-block';
 
-        // Ensure link is clickable
-        linkElement.onclick = function(e) {
-            e.stopPropagation();
-            window.open(project.link, '_blank');
-            console.log("link clicked")
-            return false;
-        };
+            // Ensure link is clickable
+            linkElement.onclick = function(e) {
+                e.stopPropagation();
+                window.open(project.link, '_blank');
+                console.log("link clicked")
+                return false;
+            };
+        } else {
+            linkElement.style.display = 'none';
+        }
 
         // Fade in new project
         setTimeout(() => {
